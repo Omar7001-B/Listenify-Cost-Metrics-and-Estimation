@@ -1,0 +1,15 @@
+{
+  "name": "listenify-cost-metrics-and-estimation",
+  "version": "1.0.0",
+  "description": "This repository contains a Python script that generates a professional project estimation report with charts, tables, and calculations for a React/JavaScript project.",
+  "main": "generate_pdf_with_mathjax.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^24.7.2"
+  }
+}
