@@ -22,6 +22,17 @@ This repository contains a professional project estimation report for the Listen
 └── requirements.txt             # Python dependencies
 ```
 
+## Project Visualizations
+
+| Image | Description |
+|-------|-------------|
+| ![Project Overview](export/images/listenify_project_estimation_professional-images-0.jpg) | Project overview and executive summary visualization |
+| ![Function Point Analysis](export/images/listenify_project_estimation_professional-images-1.jpg) | Detailed function point analysis breakdown |
+| ![Complexity Metrics](export/images/listenify_project_estimation_professional-images-2.jpg) | Project complexity factors and metrics |
+| ![Timeline Projection](export/images/listenify_project_estimation_professional-images-3.jpg) | Project timeline and milestone projections |
+| ![Risk Assessment](export/images/listenify_project_estimation_professional-images-4.jpg) | Risk assessment matrix and mitigation strategies |
+| ![Summary Dashboard](export/images/listenify_project_estimation_professional-images-5.jpg) | Project metrics and KPI summary dashboard |
+
 ## Features
 
 - Comprehensive function point analysis
