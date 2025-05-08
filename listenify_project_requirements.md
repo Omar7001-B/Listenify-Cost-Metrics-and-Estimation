@@ -2,145 +2,166 @@
 
 ## 1. Function Point Analysis Components
 
-### External Inputs (EI)
-- **Authentication System**
-  - Login form
-  - Registration form
-  - Forgot password functionality
-- **Main Transcription Interface**
-  - Real-time speech input
-  - Manual transcription corrections
-- **User Settings**
-  - Speech language selection
-  - Translation language preferences
-  - Font size configuration
-  - AI chat display settings
-  - Maximum word limit settings
-- **Custom Actions Configuration**
-  - Website integration actions setup
-  - Word-specific action configuration
-  - Sentence-specific action configuration
-- **Custom Prompts Management**
-  - Custom prompt creation (explain, summarize, translate)
-  - Prompt templates configuration
-- **AI Model Integration**
-  - API key inputs
-  - Model selection and configuration
-- **Data Management**
-  - JSON data import functionality
-  - Settings import (GSON format)
+### External Inputs (EI) - Average Weight: 4
+- **Authentication System** - *Weight: 4*
+  - Login form - *Weight: 4*
+  - Registration form - *Weight: 4*
+  - Forgot password functionality - *Weight: 3*
+- **Main Transcription Interface** - *Weight: 5*
+  - Real-time speech input - *Weight: 5*
+  - Manual transcription corrections - *Weight: 4*
+- **User Settings** - *Weight: 4*
+  - Speech language selection - *Weight: 4*
+  - Translation language preferences - *Weight: 4*
+  - Font size configuration - *Weight: 3*
+  - AI chat display settings - *Weight: 4*
+  - Maximum word limit settings - *Weight: 3*
+- **Custom Actions Configuration** - *Weight: 4*
+  - Website integration actions setup - *Weight: 5*
+  - Word-specific action configuration - *Weight: 4*
+  - Sentence-specific action configuration - *Weight: 4*
+- **Custom Prompts Management** - *Weight: 3*
+  - Custom prompt creation (explain, summarize, translate) - *Weight: 4*
+  - Prompt templates configuration - *Weight: 3*
+- **AI Model Integration** - *Weight: 4*
+  - API key inputs - *Weight: 3*
+  - Model selection and configuration - *Weight: 5*
+- **Data Management** - *Weight: 4*
+  - JSON data import functionality - *Weight: 4*
+  - Settings import (GSON format) - *Weight: 4*
 
-### External Outputs (EO)
-- **Transcription Outputs**
-  - Real-time transcription display
-  - Text file export of transcriptions
-- **User Analytics**
-  - Profile insights dashboard
-  - Word frequency analysis
-  - Learning progress metrics
-- **Reports**
-  - PDF export of user profile
-  - Learning progress reports
-- **AI Responses**
-  - Formatted AI responses to prompts
-  - Translation outputs
-  - Word explanations/definitions
+### External Outputs (EO) - Average Weight: 5
+- **Transcription Outputs** - *Weight: 5*
+  - Real-time transcription display - *Weight: 5*
+  - Text file export of transcriptions - *Weight: 4*
+- **User Analytics** - *Weight: 6*
+  - Profile insights dashboard - *Weight: 6*
+  - Word frequency analysis - *Weight: 5*
+  - Learning progress metrics - *Weight: 6*
+- **Reports** - *Weight: 5*
+  - PDF export of user profile - *Weight: 5*
+  - Learning progress reports - *Weight: 5*
+- **AI Responses** - *Weight: 4*
+  - Formatted AI responses to prompts - *Weight: 4*
+  - Translation outputs - *Weight: 4*
+  - Word explanations/definitions - *Weight: 4*
 
-### External Inquiries (EQ)
-- **Word Information Lookups**
-  - Definition queries
-  - Translation requests
-  - Pronunciation checks
-- **User Profile Searches**
-  - User discovery functionality
-  - Profile lookup
-- **Learning Resources**
-  - Related content queries
-  - Quiz generation from selected words
+### External Inquiries (EQ) - Average Weight: 4
+- **Word Information Lookups** - *Weight: 4*
+  - Definition queries - *Weight: 4*
+  - Translation requests - *Weight: 4*
+  - Pronunciation checks - *Weight: 3*
+- **User Profile Searches** - *Weight: 3*
+  - User discovery functionality - *Weight: 3*
+  - Profile lookup - *Weight: 3*
+- **Learning Resources** - *Weight: 5*
+  - Related content queries - *Weight: 5*
+  - Quiz generation from selected words - *Weight: 5*
 
-### Internal Logical Files (ILF)
-- **User Data**
-  - Profile information
-  - Authentication details
-  - Application preferences
-- **Transcription Storage**
-  - Saved transcriptions
-  - Selected words/phrases
-- **Learning Data**
-  - Word frequency tracking
-  - Learning progress metrics
-  - Struggle points identification
-- **Configuration Storage**
-  - Custom actions settings
-  - Custom prompts library
-  - UI preferences
+### Internal Logical Files (ILF) - Average Weight: 10
+- **User Data** - *Weight: 10*
+  - Profile information - *Weight: 9*
+  - Authentication details - *Weight: 10*
+  - Application preferences - *Weight: 8*
+- **Transcription Storage** - *Weight: 12*
+  - Saved transcriptions - *Weight: 12*
+  - Selected words/phrases - *Weight: 10*
+- **Learning Data** - *Weight: 9*
+  - Word frequency tracking - *Weight: 8*
+  - Learning progress metrics - *Weight: 10*
+  - Struggle points identification - *Weight: 9*
+- **Configuration Storage** - *Weight: 9*
+  - Custom actions settings - *Weight: 9*
+  - Custom prompts library - *Weight: 10*
+  - UI preferences - *Weight: 8*
 
-### External Interface Files (EIF)
-- **Translation API**
-  - Integration with translation services
-- **Transcription API**
-  - Speech-to-text service integration
-- **Pronunciation API**
-  - Audio pronunciation services
-- **English Audio Data API**
-  - Audio content integration
-- **AI Model APIs**
-  - Various AI model integrations (user-configured)
+### External Interface Files (EIF) - Average Weight: 7
+- **Translation API** - *Weight: 7*
+  - Integration with translation services - *Weight: 7*
+- **Transcription API** - *Weight: 8*
+  - Speech-to-text service integration - *Weight: 8*
+- **Pronunciation API** - *Weight: 6*
+  - Audio pronunciation services - *Weight: 6*
+- **English Audio Data API** - *Weight: 7*
+  - Audio content integration - *Weight: 7*
+- **AI Model APIs** - *Weight: 7*
+  - Various AI model integrations (user-configured) - *Weight: 7*
 
 ## 2. Complexity Factors
 
 ### Data Communications
-- **Rating: High**
+- **Rating: High (5)**
 - Complex data flow between components (transcription → recent items → AI analysis)
 - Real-time data transfer requirements
 - Multiple API integrations with external services
 
 ### Distributed Processing
-- **Rating: Medium-High**
+- **Rating: Medium-High (4)**
 - Server-side processing with client-side rendering
 - Multiple service integrations (AI, translation, transcription)
 
 ### Performance Requirements
-- **Rating: Very High**
+- **Rating: Very High (5)**
 - Critical real-time response requirements
 - Low latency needed for transcription and AI responses
 - User experience highly dependent on responsiveness
 
 ### User Configuration
-- **Rating: High**
+- **Rating: High (5)**
 - Extensive customization options
 - Custom prompts, actions, and AI model selection
 - Language preferences, UI settings, theme options
 
 ### Transaction Rate
-- **Rating: Medium**
+- **Rating: Medium (3)**
 - Support for approximately 100 concurrent users
 - Multiple API calls per user session
 - Real-time data processing requirements
 
 ### Online Data Entry
-- **Rating: High**
+- **Rating: High (4)**
 - Continuous real-time speech input
 - Text corrections and selections
 - Settings modifications
 
 ### End-User Efficiency
-- **Rating: Very High**
+- **Rating: Very High (5)**
 - Complex workflow simplification required
 - Intuitive UI for complex language learning tasks
 - Accessibility considerations for diverse user base
 
 ### Online Update
-- **Rating: High**
+- **Rating: High (4)**
 - Real-time updates across components
 - Word selection immediately reflected in recent items
 - Dynamic AI responses
 
 ### Processing Complexity
-- **Rating: High**
+- **Rating: Very High (5)**
 - AI integration and processing
 - Natural language processing components
 - Speech recognition algorithms
+
+### Reusability
+- **Rating: Medium (3)**
+- Some components designed for reuse across application
+
+### Installation Ease
+- **Rating: Low (2)**
+- Web application with standard deployment
+
+### Operational Ease
+- **Rating: Medium (3)**
+- Automated recovery procedures
+- User-friendly operation
+
+### Multiple Sites
+- **Rating: Low (2)**
+- Application designed for various devices but not heavily distributed
+
+### Facilitate Change
+- **Rating: High (4)**
+- Designed for flexible extension of features
 
 ## 3. Technologies & Implementation
 
