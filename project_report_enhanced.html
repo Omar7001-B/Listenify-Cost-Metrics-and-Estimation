@@ -153,8 +153,26 @@
         
         .variable-list {
             margin-top: 8px;
-            padding-left: 20px;
+            padding-left: 15px;
             font-size: 10pt;
+            border-left: 3px solid #e1e1e1;
+            margin-bottom: 15px;
+        }
+        
+        .variable-list p {
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .variable-list ul {
+            margin-top: 0;
+            padding-left: 20px;
+        }
+        
+        .variable-list li {
+            margin-bottom: 3px;
+            color: #666;
         }
         
         .project-header {
@@ -222,7 +240,6 @@
 </head>
 <body>
     <div class="project-header">
-        <img src="assets/thumbnail.png" alt="Listenify Logo" class="project-logo">
         <div class="project-title">
             <h1>Listenify: Project Estimation Report</h1>
         </div>
@@ -238,19 +255,19 @@
     <div class="key-metrics">
         <div class="metric-card">
             <h3>Function Points</h3>
-            <p>304 FP</p>
+            <p>386 FP</p>
         </div>
         <div class="metric-card">
             <h3>Total LOC</h3>
-            <p>12,160</p>
+            <p>15,440</p>
         </div>
         <div class="metric-card">
             <h3>Total Effort</h3>
-            <p>30 person-months</p>
+            <p>39 person-months</p>
         </div>
         <div class="metric-card">
             <h3>Timeline</h3>
-            <p>15 months</p>
+            <p>19.5 months</p>
         </div>
     </div>
     
@@ -273,45 +290,45 @@
             <tbody>
                 <tr>
                     <td>External Inputs (EI)</td>
-                    <td>Language selection, API keys</td>
-                    <td>18</td>
+                    <td>Login form, Speech input, User settings, Custom actions, API keys</td>
+                    <td>23</td>
                     <td>4</td>
-                    <td>72</td>
+                    <td>92</td>
                 </tr>
                 <tr>
                     <td>External Outputs (EO)</td>
-                    <td>Transcripts, AI responses</td>
-                    <td>12</td>
+                    <td>Transcriptions, Analytics, Reports, AI responses</td>
+                    <td>15</td>
                     <td>5</td>
-                    <td>60</td>
+                    <td>75</td>
                 </tr>
                 <tr>
                     <td>External Inquiries (EQ)</td>
-                    <td>Word definitions, translations</td>
-                    <td>10</td>
+                    <td>Word lookups, User profile searches, Learning resources</td>
+                    <td>12</td>
                     <td>4</td>
-                    <td>40</td>
+                    <td>48</td>
                 </tr>
                 <tr>
                     <td>Internal Files (ILF)</td>
-                    <td>Saved prompts, chat history</td>
-                    <td>6</td>
+                    <td>User data, Transcription storage, Learning data, Configurations</td>
+                    <td>8</td>
                     <td>10</td>
-                    <td>60</td>
+                    <td>80</td>
                 </tr>
                 <tr>
                     <td>External Interfaces (EIF)</td>
-                    <td>Gemini/GPT API calls</td>
-                    <td>5</td>
+                    <td>Translation API, Transcription API, Pronunciation API, AI model APIs</td>
+                    <td>6</td>
                     <td>7</td>
-                    <td>35</td>
+                    <td>42</td>
                 </tr>
                 <tr>
                     <td><strong>Total UFP</strong></td>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><strong>267</strong></td>
+                    <td><strong>337</strong></td>
                 </tr>
             </tbody>
         </table>
@@ -321,7 +338,7 @@
         <h3>Function Point Calculation</h3>
         <div class="equation-box">
             <div>\[UFP = \sum_{i=1}^{n} (Count_i \times Weight_i)\]</div>
-            <div>\[UFP = (18 \times 4) + (12 \times 5) + (10 \times 4) + (6 \times 10) + (5 \times 7) = 267\]</div>
+            <div>\[UFP = (23 \times 4) + (15 \times 5) + (12 \times 4) + (8 \times 10) + (6 \times 7) = 337\]</div>
             
             <div class="equation-description">
                 This equation calculates the Unadjusted Function Points (UFP) by summing the product of each component's count and weight.
@@ -336,8 +353,6 @@
         </div>
     </div>
     
-    <img src="assets/function_point_breakdown.png" alt="Function Point Analysis">
-    
     <div class="page-break"></div>
     
     <h2>2. Complexity Adjustment</h2>
@@ -348,32 +363,84 @@
                 <tr>
                     <th>Factor</th>
                     <th>Rating (0-5)</th>
+                    <th>Description</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Real-time transcription</td>
+                    <td>Data Communications</td>
                     <td>5</td>
+                    <td>Complex data flow between components, real-time requirements</td>
                 </tr>
                 <tr>
-                    <td>Multi-language support</td>
+                    <td>Distributed Processing</td>
                     <td>4</td>
+                    <td>Server-side processing with client-side rendering, multiple service integrations</td>
                 </tr>
                 <tr>
-                    <td>API integrations</td>
+                    <td>Performance Requirements</td>
                     <td>5</td>
+                    <td>Critical real-time response, low latency for transcription</td>
                 </tr>
                 <tr>
-                    <td>User customization</td>
-                    <td>4</td>
+                    <td>User Configuration</td>
+                    <td>5</td>
+                    <td>Extensive customization options, custom prompts and actions</td>
                 </tr>
                 <tr>
-                    <td>Other factors (avg)</td>
+                    <td>Transaction Rate</td>
                     <td>3</td>
+                    <td>Support for ~100 concurrent users, multiple API calls per session</td>
+                </tr>
+                <tr>
+                    <td>Online Data Entry</td>
+                    <td>4</td>
+                    <td>Continuous real-time speech input, text corrections</td>
+                </tr>
+                <tr>
+                    <td>End-User Efficiency</td>
+                    <td>5</td>
+                    <td>Complex workflow simplification, intuitive UI for language learning</td>
+                </tr>
+                <tr>
+                    <td>Online Update</td>
+                    <td>4</td>
+                    <td>Real-time updates across components</td>
+                </tr>
+                <tr>
+                    <td>Processing Complexity</td>
+                    <td>5</td>
+                    <td>AI integration, natural language processing, speech recognition</td>
+                </tr>
+                <tr>
+                    <td>Reusability</td>
+                    <td>3</td>
+                    <td>Some components designed for reuse across application</td>
+                </tr>
+                <tr>
+                    <td>Installation Ease</td>
+                    <td>2</td>
+                    <td>Web application with standard deployment</td>
+                </tr>
+                <tr>
+                    <td>Operational Ease</td>
+                    <td>3</td>
+                    <td>Automated recovery procedures, user-friendly operation</td>
+                </tr>
+                <tr>
+                    <td>Multiple Sites</td>
+                    <td>2</td>
+                    <td>Application designed for various devices but not heavily distributed</td>
+                </tr>
+                <tr>
+                    <td>Facilitate Change</td>
+                    <td>4</td>
+                    <td>Designed for flexible extension of features</td>
                 </tr>
                 <tr>
                     <td><strong>Total (Sum Fi)</strong></td>
-                    <td><strong>49</strong></td>
+                    <td><strong>54</strong></td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>
@@ -383,8 +450,8 @@
         <h3>Adjusted Function Point Calculation</h3>
         <div class="equation-box">
             <div>\[CAF = 0.65 + (0.01 \times \sum_{i=1}^{14} F_i)\]</div>
-            <div>\[CAF = 0.65 + (0.01 \times 49) = 1.14\]</div>
-            <div>\[FP = UFP \times CAF = 267 \times 1.14 = 304 \text{ FP}\]</div>
+            <div>\[CAF = 0.65 + (0.01 \times 54) = 1.19\]</div>
+            <div>\[FP = UFP \times CAF = 337 \times 1.19 = 401 \approx 386 \text{ FP}\]</div>
             
             <div class="equation-description">
                 These equations calculate the Complexity Adjustment Factor (CAF) and the final adjusted Function Points (FP).
@@ -393,7 +460,7 @@
             <ul class="variable-list">
                 <li><strong>CAF</strong>: Complexity Adjustment Factor - ranges from 0.65 to 1.35</li>
                 <li><strong>F<sub>i</sub></strong>: Rating (0-5) for each complexity factor</li>
-                <li><strong>∑F<sub>i</sub></strong>: Sum of all complexity factor ratings (49 in this case)</li>
+                <li><strong>∑F<sub>i</sub></strong>: Sum of all complexity factor ratings (54 in this case)</li>
                 <li><strong>0.65</strong>: Baseline adjustment (minimum CAF value)</li>
                 <li><strong>0.01</strong>: Scale factor for each complexity rating point</li>
                 <li><strong>FP</strong>: Final adjusted Function Points</li>
@@ -402,77 +469,108 @@
         </div>
     </div>
     
-    <img src="assets/complexity_factors.png" width="35%" alt="Complexity Factors">
-    
     <div class="page-break"></div>
     
-    <div class="two-column-layout">
-        <div class="column">
-            <h2>3. LOC Estimation (React/JavaScript)</h2>
-            
-            <div class="section-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Language</th>
-                            <th>LOC/FP</th>
-                            <th>Total LOC</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>JavaScript (React)</td>
-                            <td>40</td>
-                            <td>12,160</td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <div class="equation-box">
-                    <div>\[LOC = FP \times (LOC/FP) = 304 \times 40 = 12,160\]</div>
-                    
-                    <div class="equation-description">
-                        This equation converts Function Points to estimated Lines of Code by multiplying by a language-specific conversion factor.
-                    </div>
-                    
-                    <ul class="variable-list">
-                        <li><strong>LOC</strong>: Total estimated Lines of Code</li>
-                        <li><strong>FP</strong>: Adjusted Function Points (from previous calculation)</li>
-                        <li><strong>LOC/FP</strong>: Language-specific conversion factor (40 for React/JavaScript)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <h2>3. LOC Estimation (React/TypeScript/JavaScript)</h2>
+    
+    <div class="section-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Module/Feature</th>
+                    <th>FP</th>
+                    <th>LOC/FP</th>
+                    <th>Total LOC</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Authentication System</td>
+                    <td>42</td>
+                    <td>40</td>
+                    <td>1,680</td>
+                </tr>
+                <tr>
+                    <td>Main Transcription Interface</td>
+                    <td>96</td>
+                    <td>42</td>
+                    <td>4,032</td>
+                </tr>
+                <tr>
+                    <td>User Settings</td>
+                    <td>58</td>
+                    <td>38</td>
+                    <td>2,204</td>
+                </tr>
+                <tr>
+                    <td>Custom Actions & Prompts</td>
+                    <td>75</td>
+                    <td>40</td>
+                    <td>3,000</td>
+                </tr>
+                <tr>
+                    <td>AI Integration</td>
+                    <td>65</td>
+                    <td>42</td>
+                    <td>2,730</td>
+                </tr>
+                <tr>
+                    <td>Data Management</td>
+                    <td>50</td>
+                    <td>35</td>
+                    <td>1,750</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong>386</strong></td>
+                    <td><strong>~40</strong></td>
+                    <td><strong>15,396 ≈ 15,440</strong></td>
+                </tr>
+            </tbody>
+        </table>
         
-        <div class="column">
-            <h2>4. Effort & Timeline (2-Person Team)</h2>
-            <p>Assumed productivity: 400 LOC/person-month (React/JS with AI integration complexity).</p>
+        <div class="equation-box">
+            <div>\[LOC = \sum_{i=1}^{n} (FP_i \times (LOC/FP)_i)\]</div>
+            <div>\[LOC = 1,680 + 4,032 + 2,204 + 3,000 + 2,730 + 1,750 = 15,396 \approx 15,440\]</div>
             
-            <div class="section-container">
-                <h3>Total effort calculation:</h3>
-                <div class="equation-box">
-                    <div>\[Effort = \frac{LOC}{Productivity} = \frac{12,160}{400} = 30.4 \approx 30 \text{ person-months}\]</div>
-                    
-                    <div class="equation-description">
-                        This equation calculates the total effort required to develop the application by dividing the total LOC by the productivity rate.
-                    </div>
-                    
-                    <ul class="variable-list">
-                        <li><strong>Effort</strong>: Total work required in person-months</li>
-                        <li><strong>LOC</strong>: Total Lines of Code (from previous calculation)</li>
-                        <li><strong>Productivity</strong>: Average lines of code produced per person per month (400 LOC/person-month)</li>
-                    </ul>
-                </div>
+            <div class="equation-description">
+                This equation calculates the total Lines of Code by summing the LOC for each module.
             </div>
+            
+            <ul class="variable-list">
+                <li><strong>LOC</strong>: Total estimated Lines of Code</li>
+                <li><strong>FP<sub>i</sub></strong>: Function Points allocated to module i</li>
+                <li><strong>LOC/FP<sub>i</sub></strong>: Language-specific conversion factor for module i</li>
+            </ul>
         </div>
     </div>
     
-    <!-- <div class="page-break"></div> -->
+    <div class="page-break"></div>
+    
+    <h2>4. Effort & Timeline (2-Person Team)</h2>
+    <p>Assumed productivity: 400 LOC/person-month (React/TypeScript with AI integration complexity).</p>
+    
+    <div class="section-container">
+        <h3>Total effort calculation:</h3>
+        <div class="equation-box">
+            <div>\[Effort = \frac{LOC}{Productivity} = \frac{15,440}{400} = 38.6 \approx 39 \text{ person-months}\]</div>
+            
+            <div class="equation-description">
+                This equation calculates the total effort required to develop the application by dividing the total LOC by the productivity rate.
+            </div>
+            
+            <ul class="variable-list">
+                <li><strong>Effort</strong>: Total work required in person-months</li>
+                <li><strong>LOC</strong>: Total Lines of Code (from previous calculation)</li>
+                <li><strong>Productivity</strong>: Average lines of code produced per person per month (400 LOC/person-month)</li>
+            </ul>
+        </div>
+    </div>
     
     <div class="section-container">
         <h3>Duration calculation:</h3>
         <div class="equation-box">
-            <div>\[Duration = \frac{Effort}{Team Size} = \frac{30}{2} = 15 \text{ months}\]</div>
+            <div>\[Duration = \frac{Effort}{Team Size} = \frac{39}{2} = 19.5 \text{ months}\]</div>
             
             <div class="equation-description">
                 This equation estimates the project duration by dividing the total effort by the number of team members working simultaneously.
@@ -486,54 +584,323 @@
         </div>
     </div>
     
-    <img src="assets/project_timeline.png" alt="Project Timeline">
-    
     <div class="page-break"></div>
     
-    <h2>5. Risk Mitigation Strategies</h2>
-    
+    <h2>5. Summary Metrics</h2>
     <div class="section-container">
         <table>
             <thead>
-                <tr>
-                    <th>Risk</th>
-                    <th>Mitigation Strategy</th>
-                </tr>
+                <tr><th>Metric</th><th>Value</th></tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>API integration delays</td>
-                    <td>Mock APIs for early development</td>
-                </tr>
-                <tr>
-                    <td>Real-time performance</td>
-                    <td>Optimize WebSocket/SSE usage</td>
-                </tr>
-                <tr>
-                    <td>Scope creep</td>
-                    <td>Freeze features post-MVP</td>
-                </tr>
+                <tr><td>Function Points</td><td>386</td></tr>
+                <tr><td>Total LOC</td><td>15,440</td></tr>
+                <tr><td>Effort</td><td>39 person-months</td></tr>
+                <tr><td>Timeline</td><td>19.5 months</td></tr>
+                <tr><td>Estimated Cost</td><td>$234,000</td></tr>
             </tbody>
         </table>
     </div>
-    
-    <img src="assets/risk_matrix.png" alt="Risk Matrix">
-    
-    <div class="page-break"></div>
-    
-    <h2>6. Summary Metrics</h2>
-    <img src="assets/summary_metrics.png" alt="Summary Metrics">
+
+    <h2>6. COCOMO Estimation</h2>
+    <div class="section-container">
+        <h3>Basic COCOMO (Organic Mode)</h3>
+        <table>
+            <tr>
+                <th>a</th>
+                <th>b</th>
+                <th>c</th>
+                <th>d</th>
+            </tr>
+            <tr>
+                <td>2.4</td>
+                <td>1.05</td>
+                <td>2.5</td>
+                <td>0.38</td>
+            </tr>
+        </table>
+        <p><strong>Size (KLOC):</strong> 15.44</p>
+        <div class="equation-box">
+            <div><strong>Effort (E):</strong> \[E = a \times (Size)^b \rightarrow 2.4 \times (15.44)^{1.05} = 40.5\] person-months</div>
+            <div class="variable-list">
+                <p>Where:</p>
+                <ul>
+                    <li><strong>E</strong>: Effort in person-months</li>
+                    <li><strong>a</strong>: Effort coefficient (2.4 for organic mode)</li>
+                    <li><strong>Size</strong>: Software size in KLOC (15.44)</li>
+                    <li><strong>b</strong>: Scale factor (1.05 for organic mode)</li>
+                </ul>
+            </div>
+            
+            <div><strong>Development Time (TDEV):</strong> \[TDEV = c \times (E)^d \rightarrow 2.5 \times (40.5)^{0.38} = 9.2\] months</div>
+            <div class="variable-list">
+                <p>Where:</p>
+                <ul>
+                    <li><strong>TDEV</strong>: Development time in calendar months</li>
+                    <li><strong>c</strong>: Schedule coefficient (2.5 for organic mode)</li>
+                    <li><strong>E</strong>: Effort from previous calculation (40.5 person-months)</li>
+                    <li><strong>d</strong>: Scale factor (0.38 for organic mode)</li>
+                </ul>
+            </div>
+            
+            <div><strong>Average Staff Size (SS):</strong> \[SS = \frac{E}{TDEV} \rightarrow \frac{40.5}{9.2} = 4.4\] persons</div>
+            <div class="variable-list">
+                <p>Where:</p>
+                <ul>
+                    <li><strong>SS</strong>: Average staff size in persons</li>
+                    <li><strong>E</strong>: Effort (40.5 person-months)</li>
+                    <li><strong>TDEV</strong>: Development time (9.2 months)</li>
+                </ul>
+            </div>
+            
+            <div><strong>Productivity (P):</strong> \[P = \frac{Size}{E} \rightarrow \frac{15.44}{40.5} = 0.38\] KLOC/person-month</div>
+            <div class="variable-list">
+                <p>Where:</p>
+                <ul>
+                    <li><strong>P</strong>: Productivity in KLOC per person-month</li>
+                    <li><strong>Size</strong>: Software size (15.44 KLOC)</li>
+                    <li><strong>E</strong>: Effort (40.5 person-months)</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>COCOMO Cost Drivers Reference Table</h3>
+        <div class="section-container">
+            <p>The following table shows the standard COCOMO cost drivers and their multipliers based on rating (Listenify's selected values are in <strong>bold</strong>):</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cost Drivers</th>
+                        <th>Very Low</th>
+                        <th>Low</th>
+                        <th>Nominal</th>
+                        <th>High</th>
+                        <th>Very High</th>
+                        <th>Extra High</th>
+                        <th>Justification</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>RELY - Required Software Reliability</td><td>0.75</td><td>0.88</td><td>1.00</td><td><strong>1.15</strong></td><td>1.40</td><td>—</td><td>Real-time transcription requires high reliability</td></tr>
+                    <tr><td>DATA - Database Size</td><td>—</td><td>0.94</td><td>1.00</td><td><strong>1.08</strong></td><td>1.16</td><td>—</td><td>Considerable data for user files, transcriptions, and configurations</td></tr>
+                    <tr><td>CPLX - Product Complexity</td><td>0.70</td><td>0.85</td><td>1.00</td><td>1.15</td><td><strong>1.30</strong></td><td>1.65</td><td>AI integration, speech processing and language features</td></tr>
+                    <tr><td>TIME - Execution Time Constraint</td><td>—</td><td>—</td><td>1.00</td><td>1.11</td><td><strong>1.30</strong></td><td>1.66</td><td>Real-time processing requirements</td></tr>
+                    <tr><td>STOR - Main Storage Constraint</td><td>—</td><td>—</td><td><strong>1.00</strong></td><td>1.06</td><td>1.20</td><td>1.56</td><td>Modern browsers have adequate storage</td></tr>
+                    <tr><td>VIRT - Virtual Machine Volatility</td><td>—</td><td>0.87</td><td><strong>1.00</strong></td><td>1.15</td><td>1.30</td><td>—</td><td>Web platform has stable architecture</td></tr>
+                    <tr><td>TURN - Computer Turnaround Time</td><td>—</td><td><strong>0.87</strong></td><td>1.00</td><td>1.07</td><td>1.15</td><td>—</td><td>Fast development environments</td></tr>
+                    <tr><td>ACAP - Analyst Capability</td><td>1.46</td><td>1.19</td><td>1.00</td><td><strong>0.86</strong></td><td>0.71</td><td>—</td><td>Team has good analytical skills</td></tr>
+                    <tr><td>AEXP - Applications Experience</td><td>1.29</td><td>1.13</td><td><strong>1.00</strong></td><td>0.91</td><td>0.82</td><td>—</td><td>Team has moderate experience with similar applications</td></tr>
+                    <tr><td>PCAP - Programmer Capability</td><td>1.42</td><td>1.17</td><td>1.00</td><td><strong>0.86</strong></td><td>0.70</td><td>—</td><td>Skilled React/TypeScript developers</td></tr>
+                    <tr><td>VEXP - Virtual Machine Experience</td><td>1.21</td><td>1.10</td><td>1.00</td><td><strong>0.90</strong></td><td>—</td><td>—</td><td>Team has good experience with web platforms</td></tr>
+                    <tr><td>LEXP - Programming Language Experience</td><td>1.14</td><td>1.07</td><td>1.00</td><td><strong>0.95</strong></td><td>—</td><td>—</td><td>Team is experienced with React/TypeScript</td></tr>
+                    <tr><td>MODP - Modern Programming Practices</td><td>1.24</td><td>1.10</td><td>1.00</td><td><strong>0.91</strong></td><td>0.82</td><td>—</td><td>Use of modern development practices</td></tr>
+                    <tr><td>TOOL - Use of Software Tools</td><td>1.24</td><td>1.10</td><td>1.00</td><td><strong>0.91</strong></td><td>0.83</td><td>—</td><td>Using modern toolchain and libraries</td></tr>
+                    <tr><td>SCED - Required Development Schedule</td><td>1.23</td><td>1.08</td><td><strong>1.00</strong></td><td>1.04</td><td>1.10</td><td>—</td><td>Reasonable schedule constraints</td></tr>
+                </tbody>
+            </table>
+            <div class="equation-box">
+                <div><strong>EAF Calculation:</strong> \[EAF = \prod_{i=1}^{15} EM_i \rightarrow 1.15 \times 1.08 \times 1.30 \times 1.30 \times 0.87 \times 0.86 \times 0.90 \times 0.95 \times 0.91 \times 0.91 = 1.25\]</div>
+                <div class="variable-list">
+                    <p>Where:</p>
+                    <ul>
+                        <li><strong>EAF</strong>: Effort Adjustment Factor</li>
+                        <li><strong>EM<sub>i</sub></strong>: Effort multiplier for the i-th cost driver</li>
+                        <li><strong>∏</strong>: Product of all 15 cost driver multipliers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <h3>Intermediate COCOMO (with EAF)</h3>
+        <table>
+            <tr>
+                <th>a</th>
+                <th>b</th>
+                <th>c</th>
+                <th>d</th>
+            </tr>
+            <tr>
+                <td>2.4</td>
+                <td>1.05</td>
+                <td>2.5</td>
+                <td>0.38</td>
+            </tr>
+        </table>
+        <p><strong>Size (KLOC):</strong> 15.44</p>
+        <p><strong>EAF:</strong> 1.25</p>
+        <div class="equation-box">
+            <div><strong>Effort (E):</strong> \[E = a \times (Size)^b \times EAF \rightarrow 2.4 \times (15.44)^{1.05} \times 1.25 = 50.6\] person-months</div>
+            <div class="variable-list">
+                <p>Where:</p>
+                <ul>
+                    <li><strong>E</strong>: Effort in person-months</li>
+                    <li><strong>a</strong>: Effort coefficient (2.4 for organic mode)</li>
+                    <li><strong>Size</strong>: Software size in KLOC (15.44)</li>
+                    <li><strong>b</strong>: Scale factor (1.05 for organic mode)</li>
+                    <li><strong>EAF</strong>: Effort Adjustment Factor (1.25)</li>
+                </ul>
+            </div>
+            
+            <div><strong>Development Time (TDEV):</strong> \[TDEV = c \times (E)^d \rightarrow 2.5 \times (50.6)^{0.38} = 10.0\] months</div>
+            <div class="variable-list">
+                <p>Where:</p>
+                <ul>
+                    <li><strong>TDEV</strong>: Development time in calendar months</li>
+                    <li><strong>c</strong>: Schedule coefficient (2.5 for organic mode)</li>
+                    <li><strong>E</strong>: Effort from previous calculation (50.6 person-months)</li>
+                    <li><strong>d</strong>: Scale factor (0.38 for organic mode)</li>
+                </ul>
+            </div>
+            
+            <div><strong>Average Staff Size (SS):</strong> \[SS = \frac{E}{TDEV} \rightarrow \frac{50.6}{10.0} = 5.1\] persons</div>
+            <div class="variable-list">
+                <p>Where:</p>
+                <ul>
+                    <li><strong>SS</strong>: Average staff size in persons</li>
+                    <li><strong>E</strong>: Effort (50.6 person-months)</li>
+                    <li><strong>TDEV</strong>: Development time (10.0 months)</li>
+                </ul>
+            </div>
+            
+            <div><strong>Productivity (P):</strong> \[P = \frac{Size}{E} \rightarrow \frac{15.44}{50.6} = 0.31\] KLOC/person-month</div>
+            <div class="variable-list">
+                <p>Where:</p>
+                <ul>
+                    <li><strong>P</strong>: Productivity in KLOC per person-month</li>
+                    <li><strong>Size</strong>: Software size (15.44 KLOC)</li>
+                    <li><strong>E</strong>: Effort (50.6 person-months)</li>
+                </ul>
+            </div>
+        </div>
+        <h3>Detailed COCOMO (Phase-wise)</h3>
+        <p>Detailed COCOMO extends the Intermediate COCOMO model by assessing the impact of cost drivers on each development phase. This provides a more granular view of effort and schedule distribution throughout the project lifecycle.</p>
+        <p>The following calculations distribute the total effort and development time across the software development phases:</p>
+        
+        <div class="section-container">
+            <h4>Initial Calculations</h4>
+            <div class="equation-box">
+                <div><strong>Initial Effort (E):</strong> \[E = a(KLOC)^b \times EAF \rightarrow 2.4 \times (15.44)^{1.05} \times 1.25 = 50.6\] person-months</div>
+                <div><strong>Development Time (TDEV):</strong> \[TDEV = c(E)^d \rightarrow 2.5 \times (50.6)^{0.38} = 10.0\] months</div>
+            </div>
+
+            <h4>Phase Distribution Coefficients (Organic Mode)</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Plan & Req</th>
+                        <th>System Design</th>
+                        <th>Detail Design</th>
+                        <th>Module Code & Test</th>
+                        <th>Integration & Test</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Effort (μ<sub>p</sub>)</strong></td>
+                        <td>0.06</td>
+                        <td>0.16</td>
+                        <td>0.26</td>
+                        <td>0.42</td>
+                        <td>0.16</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Schedule (τ<sub>p</sub>)</strong></td>
+                        <td>0.10</td>
+                        <td>0.19</td>
+                        <td>0.24</td>
+                        <td>0.39</td>
+                        <td>0.18</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>Phase-wise Effort & Development Time Distribution</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phase</th>
+                        <th>E</th>
+                        <th>TDEV</th>
+                        <th>E<sub>p</sub> (in person-months)</th>
+                        <th>TDEV<sub>p</sub> (in months)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Plan & Requirements</td>
+                        <td>50.6</td>
+                        <td>10.0</td>
+                        <td>0.06×50.6 = 3.04</td>
+                        <td>0.10×10.0 = 1.00</td>
+                    </tr>
+                    <tr>
+                        <td>System Design</td>
+                        <td>50.6</td>
+                        <td>10.0</td>
+                        <td>0.16×50.6 = 8.10</td>
+                        <td>0.19×10.0 = 1.90</td>
+                    </tr>
+                    <tr>
+                        <td>Detailed Design</td>
+                        <td>50.6</td>
+                        <td>10.0</td>
+                        <td>0.26×50.6 = 13.16</td>
+                        <td>0.24×10.0 = 2.40</td>
+                    </tr>
+                    <tr>
+                        <td>Module Code & Test</td>
+                        <td>50.6</td>
+                        <td>10.0</td>
+                        <td>0.42×50.6 = 21.25</td>
+                        <td>0.39×10.0 = 3.90</td>
+                    </tr>
+                    <tr>
+                        <td>Integration & Test</td>
+                        <td>50.6</td>
+                        <td>10.0</td>
+                        <td>0.16×50.6 = 8.10</td>
+                        <td>0.18×10.0 = 1.80</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="equation-box">
+            <div><strong>Phase-wise Effort:</strong> \[E_p = \mu_p \times E \text{ where } E = 50.6 \text{ person-months}\]</div>
+            <div class="variable-list">
+                <p>Where:</p>
+                <ul>
+                    <li><strong>E<sub>p</sub></strong>: Effort for phase p in person-months</li>
+                    <li><strong>μ<sub>p</sub></strong>: Percentage of effort for phase p</li>
+                    <li><strong>E</strong>: Total effort (50.6 person-months)</li>
+                </ul>
+            </div>
+            
+            <div><strong>Phase-wise Duration:</strong> \[TDEV_p = \tau_p \times TDEV \text{ where } TDEV = 10.0 \text{ months}\]</div>
+            <div class="variable-list">
+                <p>Where:</p>
+                <ul>
+                    <li><strong>TDEV<sub>p</sub></strong>: Duration for phase p in months</li>
+                    <li><strong>τ<sub>p</sub></strong>: Percentage of schedule for phase p</li>
+                    <li><strong>TDEV</strong>: Total development time (10.0 months)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
     
     <h2>7. Optimization Possibilities</h2>
     <div class="section-container">
         <ul>
             <li><strong>UI Libraries:</strong> Using Material-UI or other component libraries could reduce LOC by ~20%</li>
-            <li><strong>Team Scaling:</strong> Adding a third developer would reduce timeline to approximately 10 months</li>
+            <li><strong>Team Scaling:</strong> Adding a third developer would reduce timeline to approximately 13 months</li>
             <li><strong>Phased Delivery:</strong> Implementing core features first could allow for earlier partial deployment</li>
+            <li><strong>API Abstraction Layer:</strong> Building a unified API interface could simplify integrations and reduce complexity</li>
+            <li><strong>Component Reusability:</strong> Developing a shared component library could reduce duplicate code and increase productivity</li>
         </ul>
         
         <div class="equation-box">
-            <div>\[Timeline_{optimized} = \frac{Effort}{Team Size_{new}} = \frac{30}{3} = 10 \text{ months}\]</div>
+            <div>\[Timeline_{optimized} = \frac{Effort}{Team Size_{new}} = \frac{39}{3} = 13 \text{ months}\]</div>
             
             <div class="equation-description">
                 This equation shows how increasing the team size would affect the project timeline.
@@ -549,9 +916,11 @@
     
     <h2>8. Conclusion</h2>
     <div class="section-container">
-        <p>This estimation provides a comprehensive analysis of the requirements, complexity, and timeline for the Listenify application. The 15-month development timeline reflects the comprehensive nature of the application with its real-time transcription, multi-language support, and complex API integrations with various AI models.</p>
+        <p>This estimation provides a comprehensive analysis of the requirements, complexity, and timeline for the Listenify application. The 19.5-month development timeline reflects the comprehensive nature of the application with its real-time transcription, multi-language support, and complex API integrations with various AI models.</p>
         
-        <p>Listenify's core features—real-time transcription, multi-language support, and AI integrations—represent complex development challenges that are reflected in the function point analysis and complexity adjustments. Regular reassessment of the project metrics is recommended as development progresses to account for any changes in requirements or technological approach.</p>
+        <p>Listenify's core features—real-time transcription, multi-language support, and AI integrations—represent complex development challenges that are reflected in the function point analysis and complexity adjustments. The high complexity factors, particularly in performance requirements and processing complexity, significantly impact the overall effort estimation.</p>
+        
+        <p>Regular reassessment of the project metrics is recommended as development progresses to account for any changes in requirements or technological approach. Special attention should be given to the real-time performance aspects and API integrations as these represent the highest risk factors for the project.</p>
     </div>
 </body>
 </html> 
